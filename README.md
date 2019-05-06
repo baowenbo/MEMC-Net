@@ -96,12 +96,12 @@ The interpolated results are under `MiddleBurySet/other-result-author/[random nu
 
 
 ### Downloading Results
-Our DAIN model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
+Our MEMC-Net* model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
 Dowload our interpolated results with:
     
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/UCF101_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/Vimeo90K_interp_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/Middlebury_eval_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/Middlebury_other_DAIN.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/UCF101_DAIN.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Vimeo90K_interp_DAIN.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_eval_DAIN.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_other_DAIN.zip
     
     
