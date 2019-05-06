@@ -57,13 +57,7 @@ Generate our PyTorch extensions:
     
     $ cd MEMC-Net
     $ cd my_package 
-    $ ./build.sh
-
-Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
-    
-    $ cd ../PWCNet/correlation_package_pytorch1_0
-    $ ./build.sh
-
+    $ ./install.sh
 
 ### Testing Pre-trained Models
 Make model weights dir and Middlebury dataset dir:
@@ -75,7 +69,10 @@ Make model weights dir and Middlebury dataset dir:
 Download pretrained models, 
 
     $ cd model_weights
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/best.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_best.pth 
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_s_best.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_star_best.pth
+    
     
 and Middlebury dataset:
     
