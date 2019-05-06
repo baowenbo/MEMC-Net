@@ -41,8 +41,56 @@ If you find the code and datasets useful in your research, please cite:
 - Cuda & Cudnn (We test with Cuda = 9.0 and Cudnn = 7.0)
 - PyTorch (The customized adaptive warping layer and other layers require cffi API in PyTorch = 0.2.0_4)
 - GCC (Compiling PyTorch 0.2.0_4 extension files (.c/.cu) requires gcc = 4.8.5 and nvcc = 9.0 compilers)
-- NVIDIA GPU (We use Titan X (Pascal) with compute = 6.1, but we support compute_50/52/60/61/70 devices, should you have device with higher compute capability, please revise [this](https://github.com/baowenbo/MEMC-Net/blob/master/my_package/install.bash))
+- NVIDIA GPU (We use Titan X (Pascal) with compute = 6.1, but we support compute_50/52/60/61/70 devices, should you have devices with higher compute capability, please revise [this](https://github.com/baowenbo/MEMC-Net/blob/master/my_package/install.bash))
 
+
+### Installation
+Download repository:
+
+    $ git clone https://github.com/baowenbo/MEMC-Net.git
+
+Before building Pytorch extensions, be sure you have `pytorch == 0.2` :
+    
+    $ python -c "import torch; print(torch.__version__)"
+    
+Generate our PyTorch extensions:
+    
+    $ cd MEMC-Net
+    $ cd my_package 
+    $ ./build.sh
+
+Generate the Correlation package required by [PWCNet](https://github.com/NVlabs/PWC-Net/tree/master/PyTorch/external_packages/correlation-pytorch-master):
+    
+    $ cd ../PWCNet/correlation_package_pytorch1_0
+    $ ./build.sh
+
+
+### Testing Pre-trained Models
+Make model weights dir and Middlebury dataset dir:
+
+    $ cd DAIN
+    $ mkdir model_weights
+    $ mkdir MiddleBurySet
+    
+Download pretrained models, 
+
+    $ cd model_weights
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/DAIN/best.pth
+    
+and Middlebury dataset:
+    
+    $ cd ../MiddleBurySet
+    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-color-allframes.zip
+    $ unzip other-color-allframes.zip
+    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-gt-interp.zip
+    $ unzip other-gt-interp.zip
+    $ cd ..
+
+We are good to go by:
+
+    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py
+
+The interpolated results are under `MiddleBurySet/other-result-author/[random number]/`, where the `random number` is used to distinguish different runnings. 
 
 
     
