@@ -2,7 +2,7 @@
 [Project](https://sites.google.com/view/wenbobao/memc-net) **|** [Paper](http://arxiv.org/abs/1810.08768)
 
 
-[Wenbo Bao](https://sites.google.com/view/wenbobao/home)
+[Wenbo Bao](https://sites.google.com/view/wenbobao/home),
 [Wei-Sheng Lai](http://graduatestudents.ucmerced.edu/wlai24/), 
 Xiaoyun Zhang, 
 Zhiyong Gao, 
@@ -22,5 +22,4 @@ and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/)
 We propose the Motion Estimation and Motion Compensation (**MEMC**) Driven Neural Network for video frame interpolation as well several other video enhancement tasks.
 A novel adaptive warping layer is proposed to integrate both optical flow and interpolation kernels to synthesize target frame pixels.
 Our method benefits from the ME and MC model-driven architecture while avoiding the conventional hand-crafted design by training on a large amount of video data.
-Extensive 
-
+Extensive quantitative and qualitative evaluations demonstrate that the proposed method performs favorably against the state-of-the-art video frame interpolation and enhancement algorithms on a wide range of datasets.
