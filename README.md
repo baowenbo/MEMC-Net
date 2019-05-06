@@ -62,7 +62,7 @@ Generate our PyTorch extensions:
 ### Testing Pre-trained Models
 Make model weights dir and Middlebury dataset dir:
 
-    $ cd DAIN
+    $ cd MEMC-Net
     $ mkdir model_weights
     $ mkdir MiddleBurySet
     
