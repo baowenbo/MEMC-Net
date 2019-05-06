@@ -96,12 +96,12 @@ The interpolated results are under `MiddleBurySet/other-result-author/[random nu
 
 
 ### Downloading Results
-Our MEMC-Net* model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
+Our MEMC-Net* (also noted as MEMC-Net_star) model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
 Dowload our interpolated results with:
     
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/UCF101_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Vimeo90K_interp_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_eval_DAIN.zip
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_other_DAIN.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/UCF101_MEMC-Net_star.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Vimeo90K_interp_MEMC-Net_star.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_eval_MEMC-Net_star.zip
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_other_MEMC-Net_star.zip
     
     
