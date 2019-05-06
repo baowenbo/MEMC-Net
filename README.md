@@ -16,7 +16,6 @@ and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/)
 1. [Installation](#installation)
 1. [Testing Pre-trained Models](#testing-pre-trained-models)
 1. [Downloading Results](#downloading-results)
-1. [Slow-motion Generation](#slow-motion-generation)
 <!--1. [Training New Models](#training-new-models) -->
 
 We propose the Motion Estimation and Motion Compensation (**MEMC**) Driven Neural Network for video frame interpolation as well several other video enhancement tasks.
