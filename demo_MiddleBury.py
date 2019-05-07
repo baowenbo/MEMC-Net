@@ -1,5 +1,4 @@
 import torch
-import time
 import os
 from torch.autograd import Variable
 import math
@@ -70,9 +69,6 @@ if DO_MiddleBurryOther:
         gen_dir = os.path.join(MB_Other_RESULT, unique_id)
         os.mkdir(gen_dir)
 
-        tot_timer = AverageMeter()
-        proc_timer = AverageMeter()
-        end = time.time()
         for dir in subdir:
             # prepare the image save path
             print(dir)
@@ -128,15 +124,9 @@ if DO_MiddleBurryOther:
             if use_cuda:
                 X0 = X0.cuda()
                 X1 = X1.cuda()
-            proc_end = time.time()
             y_s,offset,filter,occlusion = model(torch.stack((X0, X1),dim = 0))
             y_ = y_s[save_which]
 
-            # if index >=3:
-            proc_timer.update(time.time() -proc_end)
-            tot_timer.update(time.time() - end)
-            end  = time.time()
-            print("*****************current image process time \t " + str(time.time()-proc_end )+"s ******************" )
             if use_cuda:
                 X0 = X0.data.cpu().numpy()
                 y_ = y_.data.cpu().numpy()
