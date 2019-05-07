@@ -103,7 +103,8 @@ Dowload our interpolated results with:
     $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_eval_MEMC-Net_star.zip
     $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/Middlebury_other_MEMC-Net_star.zip
     
-    
+For the HD dataset, the original ground truth videos can be obtained through [this link](https://merced-my.sharepoint.com/:u:/g/personal/wbao2_ucmerced_edu/EU-1cwJsIGJLmGsIz6a30sEBo-Jv2DWcw65qElR5xwh6VA?e=spBaNI).
+And the results by MEMC-Net* model are obtained through  [this link](https://merced-my.sharepoint.com/:u:/g/personal/wbao2_ucmerced_edu/ERuru1UX1dJEj4aUtzyKHdUBjcaRehTdv8DtwGhEV62cdQ?e=swD2EL)
 
 ### Contact
 [Wenbo Bao](mailto:bwb0813@gmail.com); [Wei-Sheng (Jason) Lai](mailto:phoenix104104@gmail.com)
