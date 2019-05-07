@@ -86,7 +86,7 @@ We are good to go by:
 
     $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py
     
-Or if you would like to try MEMC-Net_s (smaller) or the MEMC-Net* model:
+Or if you would like to try MEMC-Net_s or the MEMC-Net* (noted as MEMC-Net_star) model:
     
     $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_s --pretrained MEMC-Net_s_best.pth
     $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_star --pretrained MEMC-Net_star_best.pth
@@ -95,7 +95,7 @@ The interpolated results are under `MiddleBurySet/other-result-author/[random nu
 
 
 ### Downloading Results
-Our MEMC-Net* (also noted as MEMC-Net_star) model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
+Our MEMC-Net* model achieves the state-of-the-art performance on the UCF101, Vimeo90K, and Middlebury ([*eval*](http://vision.middlebury.edu/flow/eval/results/results-n1.php) and *other*).
 Dowload our interpolated results with:
     
     $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/UCF101_MEMC-Net_star.zip
