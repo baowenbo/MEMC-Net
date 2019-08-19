@@ -57,7 +57,7 @@ Generate our PyTorch extensions:
     
     $ cd MEMC-Net
     $ cd my_package 
-    $ ./install.sh
+    $ ./install.bash
 
 ### Testing Pre-trained Models
 Make model weights dir and Middlebury dataset dir:
