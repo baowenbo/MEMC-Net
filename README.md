@@ -38,9 +38,9 @@ If you find the code and datasets useful in your research, please cite:
 ### Requirements and Dependencies
 - Ubuntu (We test with Ubuntu = 16.04.5 LTS)
 - Python (We test with Python = 3.5.4 in Anaconda3 = 4.1.1)
-- Cuda & Cudnn (We test with Cuda = 9.0 and Cudnn = 7.0)
+- Cuda & Cudnn (We test with Cuda = 8.0 and Cudnn = 5.0)
 - PyTorch (The customized adaptive warping layer and other layers require cffi API in PyTorch = 0.2.0_4)
-- GCC (Compiling PyTorch 0.2.0_4 extension files (.c/.cu) requires gcc = 4.8.5 and nvcc = 9.0 compilers)
+- GCC (Compiling PyTorch 0.2.0_4 extension files (.c/.cu) requires gcc = 4.8.5 and nvcc = 5.0 compilers)
 - NVIDIA GPU (We use Titan X (Pascal) with compute = 6.1, but we support compute_50/52/60/61/70 devices, should you have devices with higher compute capability, please revise [this](https://github.com/baowenbo/MEMC-Net/blob/master/my_package/install.bash))
 
 
