@@ -30,7 +30,8 @@ If you find the code and datasets useful in your research, please cite:
     @article{MEMC-Net,
          title={MEMC-Net: Motion Estimation and Motion Compensation Driven Neural Network for Video Interpolation and Enhancement},
          author={Bao, Wenbo and Lai, Wei-Sheng, and Zhang, Xiaoyun and Gao, Zhiyong and Yang, Ming-Hsuan},
-         journal={arXiv preprint arXiv:1810.08768},
+         journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+         doi={10.1109/TPAMI.2019.2941941},
          year={2018}
     }
     
