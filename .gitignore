@@ -4,6 +4,7 @@
 # But not these files...
 # !.gitignore
 
+target_ours/*
 model_weights/*
 MiddleBurySet/*
 
