@@ -5,8 +5,8 @@ import numpy
 import networks
 import  torch
 modelnames =  networks.__all__
-# import datasets
-datasetNames = ('Vimeo_90K_interp') #datasets.__all__
+import datasets_benchmark
+datasetNames = ('Vimeo_90K_interp').join(datasets_benchmark.__all__)
 
 parser = argparse.ArgumentParser(description='MEMC-Net')
 
@@ -28,13 +28,15 @@ parser.add_argument('--seed', type=int, default=1, help='random seed (default: 1
 
 parser.add_argument('--numEpoch', '-e', type = int, default=100, help= 'Number of epochs to train(default:150)')
 
-parser.add_argument('--batch_size', '-b',type = int ,default=10, help = 'batch size (default:10)' )
+parser.add_argument('--batch_size', '-b',type = int ,default=1, help = 'batch size (default:1)' )
 parser.add_argument('--workers', '-w', type =int,default=8, help = 'parallel workers for loading training samples (default : 1.6*10 = 16)')
 parser.add_argument('--channels', '-c', type=int,default=3,choices = [1,3], help ='channels of images (default:3)')
 parser.add_argument('--filter_size', '-f', type=int, default=4, help = 'the size of filters used (default: 4)',
                     choices=[2,4,6, 5,51]
                     )
 
+parser.add_argument('--task', type=str,choices=['sr','denoise','deblock'], help = 'select a tast to train for (default:sr)')
+parser.add_argument('--task_param', type=float,nargs = '+', default= [4.0], help = 'the task parameters such as sr ratio, denoise variance, salt&pepper ratio')
 
 # parser.add_argument('--lr', type =float, default= 0.002, help= 'the basic learning rate for three subnetworks (default: 0.002)')
 
