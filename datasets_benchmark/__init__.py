@@ -2,7 +2,9 @@
 #from .GANVideo_FineTexture import  GANVideo_FineTex
 # from .MiddleBury_keepall import MiddleBury_keepall
 from .Vimeo_90K_sr import Vimeo_90K_sr
-from .Vimeo_90K_denoise import Vimeo_90K_denoise
+from .Vimeo_90K_dn import Vimeo_90K_dn
+from .Vimeo_90K_db import Vimeo_90K_db
+
 from  .VBM4D import VBM4D
 # from   .VBM4D import VBM4D
 # from .BayseSR import BayesSR

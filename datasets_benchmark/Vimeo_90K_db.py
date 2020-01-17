@@ -20,7 +20,7 @@ def make_dataset(root, list_file):
     # return (raw_im_list[:split_index], raw_im_list[split_index:]) if split_index < len(raw_im_list) else (raw_im_list,[])
 
 # use 1% of the samples to be a validation dataset
-def Vimeo_90K_denoise(root,task,task_param):
+def Vimeo_90K_db(root,task,task_param):
     #train_list = make_dataset(root,"sep_trainlist.txt")
     test_list = make_dataset(root,"sep_testlist.txt")
     # train_dataset = ListDataset(root, train_list,task= task, task_param=task_param, loader = Vimeo_90K_loader)
