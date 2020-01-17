@@ -127,9 +127,9 @@ and Vimeo dataset:
 
 We are good to go by:
 
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_sr.py
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_dn.py
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_db.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_sr.py --netName MEMC_Net_VE --pretrained MEMC-Net_SR.pth
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_dn.py --netName MEMC_Net_VE --pretrained MEMC-Net_DN.pth
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_db.py --netName MEMC_Net_VE --pretrained MEMC-Net_DB.pth
                
 The enhanced results are under `vimeo_[sr, dn, db]_test/target_ours/[random number]/`, where the `random number` is used to distinguish different runnings. 
 
