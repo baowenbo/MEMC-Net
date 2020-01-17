@@ -102,35 +102,36 @@ Make model weights dir and Middlebury dataset dir:
 
     $ cd MEMC-Net
     $ mkdir model_weights
-    $ mkdir MiddleBurySet
+    $ mkdir vimeo_sr_test vimeo_dn_test vimeo_db_test
     
 Download pretrained models, 
 
     $ cd model_weights
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_best.pth 
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_s_best.pth
-    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_star_best.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_SR.pth 
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_DN.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_DB.pth
     
     
-and Middlebury dataset:
+and Vimeo dataset:
     
-    $ cd ../MiddleBurySet
-    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-color-allframes.zip
-    $ unzip other-color-allframes.zip
-    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-gt-interp.zip
-    $ unzip other-gt-interp.zip
+    $ cd ../vimeo_sr_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_sr_test.zip
+    $ unzip vimeo_sr_test.zip 
+    $ cd ../vimeo_dn_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_dn_test.zip
+    $ unzip vimeo_dn_test.zip 
+    $ cd ../vimeo_db_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_db_test.zip
+    $ unzip vimeo_db_test.zip 
     $ cd ..
 
 We are good to go by:
 
-    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py
-    
-Or if you would like to try MEMC-Net_s or the MEMC-Net* (noted as MEMC-Net_star) model:
-    
-    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_s --pretrained MEMC-Net_s_best.pth
-    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_star --pretrained MEMC-Net_star_best.pth
-        
-The interpolated results are under `MiddleBurySet/other-result-author/[random number]/`, where the `random number` is used to distinguish different runnings. 
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_SR.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_DN.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_DB.py
+               
+The enhanced results are under `vimeo_[sr, dn, db]_test/target_ours/[random number]/`, where the `random number` is used to distinguish different runnings. 
 
 
 ### Downloading Results
