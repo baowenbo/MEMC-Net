@@ -14,7 +14,8 @@ and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/)
 1. [Citation](#citation)
 1. [Requirements and Dependencies](#requirements-and-dependencies)
 1. [Installation](#installation)
-1. [Testing Pre-trained Models](#testing-pre-trained-models)
+1. [Testing Pre-trained Video Frame Interpolation Models](#testing-pre-trained-video-frame-interpolation-models)
+1. [Testing Pre-trained Video Enhancement Models](#testing-pre-trained-video-enhancement-models)
 1. [Downloading Results](#downloading-results)
 1. [HD Dataset Results](#hd-dataset-results)
 <!--1. [Training New Models](#training-new-models) -->
@@ -60,7 +61,43 @@ Generate our PyTorch extensions:
     $ cd my_package 
     $ ./install.bash
 
-### Testing Pre-trained Models
+### Testing Pre-trained Video Frame Interpolation Models
+Make model weights dir and Middlebury dataset dir:
+
+    $ cd MEMC-Net
+    $ mkdir model_weights
+    $ mkdir MiddleBurySet
+    
+Download pretrained models, 
+
+    $ cd model_weights
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_best.pth 
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_s_best.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_star_best.pth
+    
+    
+and Middlebury dataset:
+    
+    $ cd ../MiddleBurySet
+    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-color-allframes.zip
+    $ unzip other-color-allframes.zip
+    $ wget http://vision.middlebury.edu/flow/data/comp/zip/other-gt-interp.zip
+    $ unzip other-gt-interp.zip
+    $ cd ..
+
+We are good to go by:
+
+    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py
+    
+Or if you would like to try MEMC-Net_s or the MEMC-Net* (noted as MEMC-Net_star) model:
+    
+    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_s --pretrained MEMC-Net_s_best.pth
+    $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_star --pretrained MEMC-Net_star_best.pth
+        
+The interpolated results are under `MiddleBurySet/other-result-author/[random number]/`, where the `random number` is used to distinguish different runnings. 
+
+
+### Testing Pre-trained Video Enhancement Models
 Make model weights dir and Middlebury dataset dir:
 
     $ cd MEMC-Net
