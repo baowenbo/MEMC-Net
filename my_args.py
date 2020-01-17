@@ -6,7 +6,7 @@ import networks
 import  torch
 modelnames =  networks.__all__
 import datasets_benchmark
-datasetNames = ('Vimeo_90K_interp').join(datasets_benchmark.__all__)
+datasetNames = datasets_benchmark.__all__
 
 parser = argparse.ArgumentParser(description='MEMC-Net')
 
