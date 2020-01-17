@@ -127,9 +127,9 @@ and Vimeo dataset:
 
 We are good to go by:
 
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_SR.py
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_DN.py
-    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_DB.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_sr.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_dn.py
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_db.py
                
 The enhanced results are under `vimeo_[sr, dn, db]_test/target_ours/[random number]/`, where the `random number` is used to distinguish different runnings. 
 
