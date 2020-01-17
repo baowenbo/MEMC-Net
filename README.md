@@ -14,7 +14,8 @@ and [Ming-Hsuan Yang](http://faculty.ucmerced.edu/mhyang/)
 1. [Citation](#citation)
 1. [Requirements and Dependencies](#requirements-and-dependencies)
 1. [Installation](#installation)
-1. [Testing Pre-trained Models](#testing-pre-trained-models)
+1. [Testing Pre-trained Video Frame Interpolation Models](#testing-pre-trained-video-frame-interpolation-models)
+1. [Testing Pre-trained Video Enhancement Models](#testing-pre-trained-video-enhancement-models)
 1. [Downloading Results](#downloading-results)
 1. [HD Dataset Results](#hd-dataset-results)
 <!--1. [Training New Models](#training-new-models) -->
@@ -30,7 +31,8 @@ If you find the code and datasets useful in your research, please cite:
     @article{MEMC-Net,
          title={MEMC-Net: Motion Estimation and Motion Compensation Driven Neural Network for Video Interpolation and Enhancement},
          author={Bao, Wenbo and Lai, Wei-Sheng, and Zhang, Xiaoyun and Gao, Zhiyong and Yang, Ming-Hsuan},
-         journal={arXiv preprint arXiv:1810.08768},
+         journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+         doi={10.1109/TPAMI.2019.2941941},
          year={2018}
     }
     
@@ -57,9 +59,9 @@ Generate our PyTorch extensions:
     
     $ cd MEMC-Net
     $ cd my_package 
-    $ ./install.sh
+    $ ./install.bash
 
-### Testing Pre-trained Models
+### Testing Pre-trained Video Frame Interpolation Models
 Make model weights dir and Middlebury dataset dir:
 
     $ cd MEMC-Net
@@ -93,6 +95,43 @@ Or if you would like to try MEMC-Net_s or the MEMC-Net* (noted as MEMC-Net_star)
     $ CUDA_VISIBLE_DEVICES=0 python demo_MiddleBury.py  --netName MEMC_Net_star --pretrained MEMC-Net_star_best.pth
         
 The interpolated results are under `MiddleBurySet/other-result-author/[random number]/`, where the `random number` is used to distinguish different runnings. 
+
+
+### Testing Pre-trained Video Enhancement Models
+Make model weights dir and Middlebury dataset dir:
+
+    $ cd MEMC-Net
+    $ mkdir model_weights
+    $ mkdir vimeo_sr_test vimeo_dn_test vimeo_db_test
+    
+Download pretrained models, 
+
+    $ cd model_weights
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_SR.pth 
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_DN.pth
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/MEMC-Net_DB.pth
+    
+    
+and Vimeo dataset:
+    
+    $ cd ../vimeo_sr_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_sr_test.zip
+    $ unzip vimeo_sr_test.zip 
+    $ cd ../vimeo_dn_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_dn_test.zip
+    $ unzip vimeo_dn_test.zip 
+    $ cd ../vimeo_db_test
+    $ wget http://vllab1.ucmerced.edu/~wenbobao/MEMC-Net/vimeo_db_test.zip
+    $ unzip vimeo_db_test.zip 
+    $ cd ..
+
+We are good to go by:
+
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_VE.py --netName MEMC_Net_VE --pretrained MEMC-Net_SR.pth --datasetPath  './vimeo_sr_test' --datasetName Vimeo_90K_sr  --task sr --task_param 4.0
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_VE.py --netName MEMC_Net_VE --pretrained MEMC-Net_DN.pth --datasetPath  './vimeo_dn_test'  --datasetName Vimeo_90K_dn   --task denoise 
+    $ CUDA_VISIBLE_DEVICES=0 python demo_Vimeo_VE.py --netName MEMC_Net_VE --pretrained MEMC-Net_DB.pth --datasetPath  './vimeo_db_test'  --datasetName Vimeo_90K_db  --task deblock 
+               
+The enhanced results are under `vimeo_[sr, dn, db]_test/target_ours/[random number]/`, where the `random number` is used to distinguish different runnings. 
 
 
 ### Downloading Results
